@@ -1,0 +1,23 @@
+Hello world
+<script>
+    window.onload = function() {
+        /*
+        const data = new Blob([JSON.stringify({
+            event: 'page_load'
+        })], {
+            type: 'application/json'
+        })
+
+        const data = JSON.stringify({
+            msg: 1
+        })
+	*/
+
+        const data = new FormData()
+        data.append('john', 'doe')
+        // NOTE: This will all be converted to strings.
+        data.append('age', 1)
+        data.append('valid', true)
+        console.log(navigator.sendBeacon('/', data))
+    }
+</script>
